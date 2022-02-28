@@ -1,0 +1,67 @@
+/* Color */
+/* -------------------------------------- */
+:root {
+	--blue: #1892d3;
+	--yellow: #f1b329;
+	--grey: #e1e8f0;
+}
+
+/* Layout of Pages */
+/* -------------------------------------- */
+html,
+body {
+	box-sizing: border-box;
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	color: black;
+}
+
+/*
+  From Wesbos CSS Grid Course
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+em,
+i,
+dfn {
+	font-style: italic;
+}
+.wrapper {
+	display: grid;
+	grid-template-areas:
+		'sidebar header header header'
+		'sidebar projects projects announcements'
+		'sidebar projects projects announcements'
+		'sidebar projects projects trending'
+		'sidebar projects projects trending';
+}
+
+header {
+	grid-area: header;
+}
+
+.sidebar {
+	grid-area: sidebar;
+}
+
+.projects {
+	grid-area: projects;
+}
+
+.announcements {
+	grid-area: announcements;
+}
+
+.trending {
+	grid-area: trending;
+}
