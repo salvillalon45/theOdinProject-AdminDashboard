@@ -44,14 +44,11 @@ dfn {
 		'sidebar projects projects announcements'
 		'sidebar projects projects trending'
 		'sidebar projects projects trending';
+	height: 100vh;
 }
 
 header {
 	grid-area: header;
-}
-
-.sidebar {
-	grid-area: sidebar;
 }
 
 .projects {
@@ -64,4 +61,31 @@ header {
 
 .trending {
 	grid-area: trending;
+}
+
+.sidebar {
+	/* Page Layout */
+	grid-area: sidebar;
+
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+	gap: 2rem;
+	padding-top: 1rem;
+	padding-left: 1rem;
+
+	background-color: var(--blue);
+	color: white;
+}
+
+.menu-1 ul,
+.menu-2 ul {
+	display: grid;
+	gap: 1rem;
+}
+
+.menu-list-item-container,
+.logo-container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
