@@ -47,14 +47,6 @@ dfn {
 	height: 100vh;
 }
 
-header {
-	grid-area: header;
-}
-
-.projects {
-	grid-area: projects;
-}
-
 .announcements {
 	grid-area: announcements;
 }
@@ -63,6 +55,41 @@ header {
 	grid-area: trending;
 }
 
+/* Header */
+/* -------------------------------------- */
+header {
+	/* Page Layout */
+	grid-area: header;
+
+	display: grid;
+	gap: 1rem;
+
+	margin-left: 1.2rem;
+	margin-right: 1.5rem;
+}
+
+.row-1,
+.row-2 {
+	display: grid;
+	grid-template-columns: 1fr max-content;
+}
+
+.search-bar-container,
+.user-account-container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.user-info-container,
+.user-actions-container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* Sidebar */
+/* -------------------------------------- */
 .sidebar {
 	/* Page Layout */
 	grid-area: sidebar;
@@ -88,4 +115,29 @@ header {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
+}
+
+/* Article - Your Projects */
+/* -------------------------------------- */
+.projects {
+	grid-area: projects;
+}
+
+.projects > section {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+.project-card {
+	display: grid;
+	justify-items: flex-end;
+	gap: 1rem;
+
+	border-left: 10px solid var(--yellow);
+}
+
+.project-sharing {
+	display: flex;
+	gap: 1rem;
 }
