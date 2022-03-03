@@ -3,7 +3,10 @@
 :root {
 	--blue: #1892d3;
 	--yellow: #f1b329;
-	--grey: #e1e8f0;
+	--grey: #e2e8f0;
+	--grey-1: #fafaf9;
+	--grey-text: #78716c;
+	--shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 /* Layout of Pages */
@@ -39,20 +42,15 @@ dfn {
 .wrapper {
 	display: grid;
 	grid-template-areas:
-		'sidebar header header header'
+		/* 'sidebar header header header'
 		'sidebar projects projects announcements'
 		'sidebar projects projects announcements'
 		'sidebar projects projects trending'
-		'sidebar projects projects trending';
+		'sidebar projects projects trending'; */
+		'sidebar header header'
+		'sidebar content content'
+		'sidebar content content';
 	height: 100vh;
-}
-
-.announcements {
-	grid-area: announcements;
-}
-
-.trending {
-	grid-area: trending;
 }
 
 /* Header */
@@ -117,6 +115,20 @@ header {
 	gap: 0.5rem;
 }
 
+/* Articles Wrapper */
+/* -------------------------------------- */
+/* This is needed to make everything inside main grid items */
+main {
+	/* display: contents; */
+	grid-area: content;
+	/* background-color: var(--grey); */
+	display: grid;
+	grid-template-areas:
+		'projects announcements'
+		'projects trending';
+	gap: 1rem;
+}
+
 /* Article - Your Projects */
 /* -------------------------------------- */
 .projects {
@@ -140,4 +152,55 @@ header {
 .project-sharing {
 	display: flex;
 	gap: 1rem;
+}
+
+.project-info p:first-child {
+	font-size: 1.2rem;
+	margin-bottom: 0.25em;
+	font-weight: 700;
+}
+
+.project-info p:last-child {
+	color: var(--grey-text);
+	font-size: small;
+}
+
+/* Article - Announcements */
+/* -------------------------------------- */
+.announcements {
+	grid-area: announcements;
+}
+
+.announcements div p:first-child {
+	font-size: 0.9rem;
+	margin-bottom: 0.25em;
+	font-weight: 700;
+}
+
+.announcements div p:last-child {
+	color: var(--grey-text);
+	font-size: 0.8rem;
+}
+
+/* Article - Trending */
+/* -------------------------------------- */
+.trending {
+	grid-area: trending;
+}
+
+.trending > section {
+	display: grid;
+	gap: 1rem;
+}
+
+.trending-container > div {
+	display: grid;
+	grid-template-columns: min-content auto;
+}
+
+.card {
+	background-color: var(--gray-1);
+	padding: 2rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
 }
