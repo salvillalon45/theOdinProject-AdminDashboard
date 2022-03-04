@@ -7,6 +7,8 @@
 	--grey-1: #fafaf9;
 	--grey-text: #78716c;
 	--shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+	--font-size-9rem: 0.9rem;
 }
 
 /* Layout of Pages */
@@ -51,6 +53,9 @@ dfn {
 		'sidebar content content'
 		'sidebar content content';
 	height: 100vh;
+
+	/* This separates the main tag and header tag */
+	row-gap: 2rem;
 }
 
 /* Header */
@@ -58,12 +63,17 @@ dfn {
 header {
 	/* Page Layout */
 	grid-area: header;
+	margin-top: 4rem;
+	box-shadow: var(--shadow);
+}
 
+header > div {
 	display: grid;
 	gap: 1rem;
 
-	margin-left: 1.2rem;
-	margin-right: 1.5rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
 }
 
 .row-1,
@@ -73,17 +83,56 @@ header {
 }
 
 .search-bar-container,
-.user-account-container {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
+.user-account-container,
 .user-info-container,
 .user-actions-container {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
+}
+
+.user-account-container {
+	gap: 1.5rem;
+}
+
+.user-account-container p {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.user-avatar {
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+}
+
+.search-bar-container > input {
+	display: inline-block;
+	border: 0;
+	background-color: var(--grey);
+	padding: 0.75em 2em;
+	outline-color: var(--primary);
+	border-radius: 99em;
+	width: min(80%, 700px);
+}
+
+.user-info-container {
+	gap: 0.9rem;
+}
+
+.user-info-container > div {
+	display: grid;
+	gap: 0.2rem;
+}
+
+.user-info-container > div p:first-child {
+	font-size: 0.6rem;
+	font-weight: 700;
+}
+
+.user-info-container > div p:last-child {
+	font-size: 1rem;
+	font-weight: 900;
 }
 
 /* Sidebar */
@@ -117,16 +166,20 @@ header {
 
 /* Articles Wrapper */
 /* -------------------------------------- */
-/* This is needed to make everything inside main grid items */
 main {
-	/* display: contents; */
 	grid-area: content;
-	/* background-color: var(--grey); */
 	display: grid;
 	grid-template-areas:
 		'projects announcements'
 		'projects trending';
 	gap: 1rem;
+	grid-template-columns: 3fr 1fr;
+}
+
+main h2 {
+	font-size: 1rem;
+	margin-bottom: 0.8rem;
+	font-weight: 700;
 }
 
 /* Article - Your Projects */
@@ -155,7 +208,7 @@ main {
 }
 
 .project-info p:first-child {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	margin-bottom: 0.25em;
 	font-weight: 700;
 }
@@ -171,8 +224,17 @@ main {
 	grid-area: announcements;
 }
 
+.announcements > section {
+	display: grid;
+	gap: 1rem;
+}
+
+.announcements > section > div {
+	cursor: pointer;
+}
+
 .announcements div p:first-child {
-	font-size: 0.9rem;
+	font-size: var(--font-size-9rem);
 	margin-bottom: 0.25em;
 	font-weight: 700;
 }
@@ -180,6 +242,12 @@ main {
 .announcements div p:last-child {
 	color: var(--grey-text);
 	font-size: 0.8rem;
+}
+
+hr {
+	border: 0.5px solid var(--grey);
+	background-color: var(--grey);
+	width: 100%;
 }
 
 /* Article - Trending */
@@ -193,9 +261,32 @@ main {
 	gap: 1rem;
 }
 
-.trending-container > div {
+.trending-container {
 	display: grid;
 	grid-template-columns: min-content auto;
+	gap: 1rem;
+
+	cursor: pointer;
+	align-items: center;
+}
+
+.trending-container > div {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.trending-container > div p:first-child {
+	font-weight: 700;
+}
+
+.trending-container p {
+	font-size: var(--font-size-9rem);
+}
+
+.trending-container img {
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
 }
 
 .card {
@@ -203,4 +294,18 @@ main {
 	padding: 2rem;
 	border-radius: 0.5rem;
 	box-shadow: var(--shadow);
+}
+
+button {
+	border: none;
+	appearance: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+
+	background-color: var(--blue);
+	color: white;
+	font-weight: 500;
+	padding: 0.75em 2.3em;
+	border-radius: 99em;
 }
