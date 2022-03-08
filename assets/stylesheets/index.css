@@ -7,8 +7,6 @@
 	--grey-1: #fafaf9;
 	--grey-text: #78716c;
 	--shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-
-	--font-size-9rem: 0.9rem;
 }
 
 /* Layout of Pages */
@@ -36,26 +34,14 @@ main {
 	flex: 1 0 auto;
 }
 
-em,
-i,
-dfn {
-	font-style: italic;
-}
+/* Wraps the entire application */
 .wrapper {
 	display: grid;
 	grid-template-areas:
-		/* 'sidebar header header header'
-		'sidebar projects projects announcements'
-		'sidebar projects projects announcements'
-		'sidebar projects projects trending'
-		'sidebar projects projects trending'; */
 		'sidebar header header'
 		'sidebar content content'
 		'sidebar content content';
 	height: 100vh;
-
-	/* This separates the main tag and header tag */
-	row-gap: 2rem;
 }
 
 /* Header */
@@ -63,7 +49,7 @@ dfn {
 header {
 	/* Page Layout */
 	grid-area: header;
-	margin-top: 4rem;
+
 	box-shadow: var(--shadow);
 }
 
@@ -71,9 +57,7 @@ header > div {
 	display: grid;
 	gap: 1rem;
 
-	margin-left: 2rem;
-	margin-right: 2rem;
-	margin-bottom: 2rem;
+	margin: 2rem;
 }
 
 .row-1,
@@ -146,9 +130,10 @@ header > div {
 	gap: 2rem;
 	padding-top: 1rem;
 	padding-left: 1rem;
+	padding-right: 2rem;
 
 	background-color: var(--blue);
-	color: white;
+	color: #fff;
 }
 
 .menu-1 ul,
@@ -164,16 +149,35 @@ header > div {
 	gap: 0.5rem;
 }
 
+.menu-list-item-container p {
+	font-weight: 600;
+}
+
+.logo-container h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.logo-container img {
+	height: 2.5rem;
+}
+
 /* Articles Wrapper */
 /* -------------------------------------- */
 main {
+	/* Page Layout */
 	grid-area: content;
+
 	display: grid;
 	grid-template-areas:
 		'projects announcements'
 		'projects trending';
 	gap: 1rem;
 	grid-template-columns: 3fr 1fr;
+
+	background-color: var(--grey);
+
+	padding: 2rem;
 }
 
 main h2 {
@@ -185,6 +189,7 @@ main h2 {
 /* Article - Your Projects */
 /* -------------------------------------- */
 .projects {
+	/* Page Layout */
 	grid-area: projects;
 }
 
@@ -221,6 +226,7 @@ main h2 {
 /* Article - Announcements */
 /* -------------------------------------- */
 .announcements {
+	/* Page Layout */
 	grid-area: announcements;
 }
 
@@ -234,7 +240,7 @@ main h2 {
 }
 
 .announcements div p:first-child {
-	font-size: var(--font-size-9rem);
+	font-size: 0.9rem;
 	margin-bottom: 0.25em;
 	font-weight: 700;
 }
@@ -253,6 +259,7 @@ hr {
 /* Article - Trending */
 /* -------------------------------------- */
 .trending {
+	/* Page Layout */
 	grid-area: trending;
 }
 
@@ -280,7 +287,7 @@ hr {
 }
 
 .trending-container p {
-	font-size: var(--font-size-9rem);
+	font-size: 0.9rem;
 }
 
 .trending-container img {
@@ -290,7 +297,7 @@ hr {
 }
 
 .card {
-	background-color: var(--gray-1);
+	background-color: var(--grey-1);
 	padding: 2rem;
 	border-radius: 0.5rem;
 	box-shadow: var(--shadow);
@@ -304,7 +311,7 @@ button {
 	cursor: pointer;
 
 	background-color: var(--blue);
-	color: white;
+	color: #fff;
 	font-weight: 500;
 	padding: 0.75em 2.3em;
 	border-radius: 99em;
