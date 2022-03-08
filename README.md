@@ -1,11 +1,11 @@
 <h1 align="center">
-[The Odin Project: Intermediate HTML and CSS] - Project: Sign Up Form
+[The Odin Project: Intermediate HTML and CSS] - Project: Admin Dashboard
 </h1>
 
 ## Intro
 
 -   The goal of this project was to practice CSS Grid. We were to create an Admin Dashboard where we layed out all the element only using CSS Grid
--   The project can be found here: . It is hosted by Netlify.
+-   The project can be found here: https://odin-admindashboard-sv.netlify.app/. It is hosted by Netlify.
 -   You can find more on the project here: [The Odin Project - Admin Dashboard](https://www.theodinproject.com/paths/full-stack-javascript/courses/intermediate-html-and-css/lessons/admin-dashboard)
 
 ## Lessons Learned
