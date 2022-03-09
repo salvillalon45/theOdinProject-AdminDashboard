@@ -316,3 +316,17 @@ button {
 	padding: 0.75em 2.3em;
 	border-radius: 99em;
 }
+
+@media only screen and (max-width: 426px) {
+	.row-1,
+	.row-2 {
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-items: center;
+		gap: 1rem;
+	}
+
+	.user-account-container {
+		display: none;
+	}
+}
